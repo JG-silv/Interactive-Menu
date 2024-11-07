@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--let é uma declaração de variavel como a var mais elas tem algumas coisa diferentes entre elas -->
+
+<body>
+    <script>
+        //Declaração de functions
+        function somaDoisNum(value1, value2) {//para somar dois numeros
+            return value1 + value2;
+        }
+
+        function mediaQuatroNotes(nota1, nota2, nota3, nota4) {//para calcular media das notas
+            return (parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4)) / 4;
+        }
+
+        function perimetroDoRetangulo(comprimento, largura) {//para calcular perimetro do retangulo
+            return (2 * (comprimento + largura));
+        }
+
+        function areaDoCirculo(raio) {//para calcular a area do circulo 
+            var numPi = "3.14";
+            return numPi * (raio * raio);
+        }
+
+        function nomeSobreNome(nomeSobre, sobreNome) {//para pedir o nome e o sobrenome de uma pessoa
+            return nomeSobre + " " + sobreNome;
+        }
+
+        function quatroNumInteiro(numero1, numero2, numero3, numero4) {//para ver qual o numero maior
+            var maiorNum = numero1;
+            if (numero2 > maiorNum) {
+                maiorNumero = numero2;
+            } if (numero3 > maiorNum) {
+                maiorNumero = numero3;
+            } if (numero4 > maiorNum) {
+                maiorNumero = numero4;
+            }
+            return maiorNum;
+        }
+
+        function cincoNumInteiro(numero1, numero2, numero3, numero4, numero5) {//para ver qual o numero menor
+            var menorNum = numero1;
+            if (numero2 < menorNum) {
+                var menorNum = numero2;
+            }
+            if (numero3 < menorNum) {
+                var menorNum = numero3;
+            }
+            if (numero4 < menorNum) {
+                var menorNum = numero4;
+            }
+            if (numero5 < menorNum) {
+                var menorNum = numero5;
+            }
+            return menorNum;
+        }
+
+        function umNumeroInt(numInteiro) {// exibir a tabuada do numero //usa o comando de loop for para exibir a tabuada do número
+            for (var i = 1; i <= 10; i++) {
+                resultado += numInteiro + " x " + i + " = " + (numInteiro * i) + "\n";
+            }
+            return resultado;
+        }
+
+        function volumeDoParalelepipedo(comprimento, largura, altura) {//para calcular volume do paralelepipedo
+            return comprimento * largura * altura;
+        }
+
+        function volumeDaEsfera(raio) {//para calcular o valor do volume da esfera
+            var pi = "3.14";
+            return (4 / 3) * pi * (raio * raio * raio);
+        }
+
+        function idadePerson(dataNascimento, dataAtual) {//para calcular a idade da pessoa
+            return (dataNascimento - dataAtual);
+        }
+
+        function verificarNumIntPrimo(num) {// para verificar se o número é primo
+            var divisor = 2;
+            alert("O número " + verificarNumIntPrimo(num) + " é primo");
+            if (num <= 1) {
+                alert("O número " + verificarNumIntPrimo(num) + " não é primo");
+            } else {
+                if (num % divisor == 0 && num !== divisor) {
+                    alert("O número " + verificarNumIntPrimo(num) + " não é primo");
+                } else {
+                    divisor++;//exibi o calculo
+                    if (num % divisor == 0 && num !== divisor) {
+                        alert("O número " + verificarNumIntPrimo(num) + " não é primo");
+                    } else {
+                        return num;
+                    }
+                }
+            }
+        }
+
+        function nomeDoMes(num) {//para mostrar o mes do ano correspondente ao número
+            var numMes;
+            if (num == 1) {
+                numMes = "Janeiro";
+            } else {
+                if (num == 2) {
+                    numMes = "Fevereiro";
+                } else {
+                    if (num == 3) {
+                        numMes = "Março";
+                    } else {
+                        if (num == 4) {
+                            numMes = "Abril";
+                        } else {
+                            if (num == 5) {
+                                numMes = "Maio";
+                            } else {
+                                if (num == 6) {
+                                    numMes = "Junho";
+                                } else {
+                                    if (num == 7) {
+                                        numMes = "Julho";
+                                    } else {
+                                        if (num == 8) {
+                                            numMes = "Agosto";
+                                        } else {
+                                            if (num == 9) {
+                                                numMes = "Setembro";
+                                            } else {
+                                                if (num == 10) {
+                                                    numMes = "Outubro";
+                                                } else {
+                                                    if (num == 11) {
+                                                        numMes = "Novembro";
+                                                    } else {
+                                                        if (num == 12) {
+                                                            numMes = "Dezembro";
+                                                        } else {
+                                                            return "O Número Digitado é classificado como inválido!\nPor favor, insira um número de 1 a 12.";
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return "O mês correspondente ao número " + num + " é " + numMes + "."; //retornar o valor dado ao mes correspondente
+        }
+
+        function multiplicacaoTresNum(number1, number2, number3) {//para multiplicar 3 números
+            return (number1 * number2 * number3);
+        }
+
+        function divisaoDoisNum(num1, num2) {//para dividir 2 números
+            return (num1 / num2);
+        }
+
+        // PARTE DO SCRIPT - MENU INTERATIVO
+        var opcao;
+        do {
+            opcao = prompt("Menu:\n\t" +
+                "1 - Calcular a soma de 2 números\n\t" +
+                "2 - Calcular a média aritmética de 4 notas\n\t" +
+                "3 - Calcular o perímetro de um retângulo\n\t" +
+                "4 - Calcular a área de um círculo\n\t" +
+                "5 - Pedir o nome e sobrenome de uma pessoa\n\t" +
+                "6 - Pedir 4 números inteiros e mostrar o maior\n\t" +
+                "7 - Pedir 5 números inteiros e mostrar o menor\n\t" +
+                "8 - Exibir a tabuada de um número\n\t" +
+                "9 - Calcular o volume de um paralelepípedo\n\t" +
+                "10 - Calcular o volume de uma esfera\n\t" +
+                "11 - Calcular a idade de uma pessoa\n\t" +
+                "12 - Verificar se um número é primo\n\t" +
+                "13 - Mostrar o mês correspondente ao número (1 a 12)\n\t" +
+                "14 - Multiplicar 3 números\n\t" +
+                "15 - Dividir 2 números\n\t" +
+                "s ou S - Para sair desse menu"
+            );
+            switch (opcao) {
+                case "1": {// fazer soma de 2 números
+                    var value1 = prompt("Digite o 1º valor:");
+                    var value2 = prompt("Digite o 2º valor:");
+                    alert("A soma desses dois números é de " + somaDoisNum(value1, value2));
+                    break;
+                }
+                case "2": {// fazer media de 4 notas
+                    var nota1 = prompt("Digite a primeira nota:");
+                    var nota2 = prompt("Digite a segunda nota:");
+                    var nota3 = prompt("Digite a terceira nota:");
+                    var nota4 = prompt("Digite a quarta nota:");
+                    alert("A media das quatro notas é de " + mediaQuatroNotes(nota1, nota2, nota3, nota4));
+                    break;
+                }
+                case "3": {// ver o perimetro do retângulo
+                    var comprimento = parseInt(prompt("Digite o valor do comprimento do retângulo:"));
+                    var largura = parseInt(prompt("Digite o valor da largura do retângulo:"));
+                    alert("O perimetro do retângulo é de " + perimetroDoRetangulo(comprimento, largura) + " cm");
+                    break;
+                }
+                case "4": {// ver a área do circulo
+                    var raio = prompt("Digite o valor do raio do circulo: ");
+                    alert("A área do circulo é de " + areaDoCirculo(raio) + " cm");
+                    break;
+                }
+                case "5": {// mostrar o nome completo do usuario
+                    var nomeSobre = prompt("Digite a parte inicial do seu nome: ");
+                    var sobreNome = prompt("Digite somente o seu sobrenome: ");
+                    alert("O seu nome completo é " + nomeSobreNome(nomeSobre, sobreNome));
+                    break;
+                }
+                case "6": {// saber qual dos 4 numeros é o maior
+                    var numero1 = parseInt(prompt("Digite o 1º número inteiro: "));
+                    var numero2 = parseInt(prompt("Digite o 2º número inteiro: "));
+                    var numero3 = parseInt(prompt("Digite o 3º número inteiro: "));
+                    var numero4 = parseInt(prompt("Digite o 4º número inteiro: "));
+                    alert("O maior número digitado foi: " + quatroNumInteiro(numero1, numero2, numero3, numero4));
+                    break;
+                }
+                case "7": {// saber qual dos 5 numeros é o menor
+                    var numero1 = parseInt(prompt("Digite o 1º número inteiro: "));
+                    var numero2 = parseInt(prompt("Digite o 2º número inteiro: "));
+                    var numero3 = parseInt(prompt("Digite o 3º número inteiro: "));
+                    var numero4 = parseInt(prompt("Digite o 4º número inteiro: "));
+                    var numero5 = parseInt(prompt("Digite o 5º número inteiro: "));
+                    alert("O menor número digitado foi: " + cincoNumInteiro(numero1, numero2, numero3, numero4, numero5));
+                    break;
+                }
+                case "8": {//mostrar a tabuada do numero inteiro
+                    var numInteiro = parseInt(prompt("Digite um número inteiro: "));
+                    alert(umNumeroInt("Tabuada do " + numInteiro + ":\n"));
+                    break;
+                }
+                case "9": {// mostrar o volume do paralelepipedo
+                    var comprimento = prompt("Digite o valor do comprimento do paralelepípedo:");
+                    var largura = prompt("Digite o valor da largura do paralelepípedo:");
+                    var altura = prompt("Digite o valor da altura do paralelepípedo:");
+                    alert("O volume do paralelepípedo é de " + volumeDoParalelepipedo(comprimento, largura, altura) + " cm³.");
+                    break;
+                }
+                case "10": {//mostrar o volume da esfera 
+                    var raio = parseInt(prompt("Digite o raio da esfera em cm:"));
+
+                    alert("O volume da esfera com raio de " + raio + " cm é aproximadamente " + volumeDaEsfera(raio) + " cm³.");
+                    break;
+                }
+                case "11": {// mostrar a idade do usuario
+                    var dataNascimento = prompt("Digite sua data de nascimento (formato: YYYY-MM-DD):");
+                    var dataAtual = prompt("Digite a data atual (formato: YYYY-MM-DD):");
+                    alert("A sua idade é " + idadePerson(dataNascimento, dataAtual) + "  anos");
+                    break;
+                }
+                case "12": {//
+                    var num = parseInt(prompt("Digite um número qualquer"));
+
+                    alert("O número " + verificarNumIntPrimo(num) + " é primo");
+                    break;
+                }
+                case "13": {//mostrar o número do mês 
+                    var num = parseInt(prompt("Digite um número qualquer de (1 á 12): "));
+                    alert(nomeDoMes(num));
+                    break;
+                }
+                case "14": {// multiplicar 3 números 
+                    var number1 = parseInt(prompt("Digite o 1º valor:"));
+                    var number2 = parseInt(prompt("Digite o 2º valor:"));
+                    var number3 = parseInt(prompt("Digite o 3º valor:"));
+                    alert("O Resultado da multiplicação desses 3 números é de " + multiplicacaoTresNum(number1, number2, number3));
+                    break;
+                }
+                case "15": {//dividir 2 números 
+                    var num1 = parseInt(prompt("Digite o 1º valor:"));
+                    var num2 = parseInt(prompt("Digite o 2º valor:"));
+                    alert("O Resultado da divisão desses 2 números é de " + divisaoDoisNum(num1, num2));
+                    break;
+                }
+                case "s":
+                case "S": {
+                    var exit = alert("Você digitou a opção de saida\n" + "Se sim, clique em Ok");
+                    alert("Volte Sempre!!!");
+                    break;
+                }
+                default:
+                    alert("Opção inválida,\n Tente novamente.");
+            }
+            alert("VOCÊ CHEGOU AO FIM DO PROGRAMA!!!");
+        } while (opcao !== "s" && opcao !== "S");
+        //FAZER OS CODIGOS COM PASSAGEM DE ARGUMENTO E COM RETORNO QUE FOI UMA COISA QUE NN UTILIZEI 
+
+
+    </script>
+</body>
+
+</html>
